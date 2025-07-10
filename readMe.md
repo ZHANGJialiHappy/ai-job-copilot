@@ -12,9 +12,9 @@ Looking to supercharge your job applications?
 
 ## 🚀 How It Works
 
-1. **Upload** your Resume (PDF)  
-2. **Upload** the Job Description (PDF)  
-3. **Click Submit**  
+1. **Upload** your Resume (PDF)
+2. **Upload** the Job Description (PDF)
+3. **Click Submit**
 4. **Get Instant AI Analysis**, including:
    - Match Score (0–100)
    - Matched skills & experience
@@ -28,9 +28,9 @@ Looking to supercharge your job applications?
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js + Tailwind CSS  
-- **Backend**: FastAPI (Python)  
-- **LLM**: OpenRouter / GPT-based language model  
+- **Frontend**: Next.js + Tailwind CSS
+- **Backend**: FastAPI (Python)
+- **LLM**: OpenRouter / GPT-based language model
 - **PDF Parsing**: `pdfplumber`
 
 ---
@@ -40,5 +40,13 @@ Looking to supercharge your job applications?
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/job-matching-assistant.git
-cd job-matching-assistant
+git clone https://github.com/ZHANGJialiHappy/ai-job-copilot.git
+cd backend
+start server: python -m uvicorn main:app --reload
+```
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
