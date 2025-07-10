@@ -1,6 +1,6 @@
 def build_matching_prompt(resume_text:str, job_description:str) -> str:
     return f"""
-You are a recruitment assistant. Evaluate how well the applicant's resume matches the job description below. 
+You are an AI assistant helping to evaluate resume fit for a job.
 
 Strict Instructions:
 - ONLY use the content provided in the [Resume] and [Job Description].
@@ -15,13 +15,15 @@ Strict Instructions:
 [Job Description]:
 {job_description}
 
-Please answer the following questions:
+Please analyze and respond using the exact pattern below:
 
-1. Match Score (0–100), based strictly on actual overlap of skills and experience.
-2. What key qualifications or skills match?
-3. What important requirements are missing or unclear?
-4. How could the resume be improved to better align with the job?
-5. Generate a short (max 120 words) cover letter based ONLY on the actual resume and job description content. If there is not enough information to generate a meaningful letter, say: "Insufficient data for personalized cover letter."
+1. Match Score: <numerical score between 0-100 based on actual overlap>
+2. Matched key qualifications or skills: <bullet or comma-separated list of clearly matched items>
+3. Missing requirements: <list of key skills/experience not found or unclear in resume>
+4. Improvement points: <specific suggestions to make resume better aligned>
+5. Cover letter: <brief cover letter, max 120 words, grounded strictly in resume and job description. If not enough info, reply: "Insufficient data for personalized cover letter.">
+
+Your full response must follow this structure exactly.
 Reply in English.
 
 """
