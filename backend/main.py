@@ -1,12 +1,20 @@
 from fastapi import FastAPI, UploadFile
 import pdfplumber
 from io import BytesIO
-
+from fastapi.middleware.cors import CORSMiddleware
 from openrouter_client import ask_model
 from prompt_templates import build_matching_prompt
 
 
 app=FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 或者指定你的前端地址，如 http://localhost:3000
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def extract_text_from_pdf(file: BytesIO) -> str:
     text = ""
